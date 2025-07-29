@@ -248,7 +248,7 @@ function configureRoutes(app, appState, clients) {
         saveUninitialized: false,
         cookie: { 
             secure: process.env.NODE_ENV === 'production',
-            maxAge:   10 *1000 // 8 hours
+            maxAge:   60 * 60 * 1000 // 1 hours
         }
     }));
 
