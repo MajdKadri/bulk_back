@@ -1,0 +1,36 @@
+{
+  "name": "bulk",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "bcryptjs": "^3.0.2",
+    "child_process": "^1.0.2",
+    "connect-pg-simple": "^10.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "express-ntlm": "^2.7.0",
+    "express-session": "^1.18.1",
+    "filewriter-siawwad": "^1.0.6",
+    "ldapjs": "^3.0.7",
+    "limiter": "^3.0.0",
+    "multer": "^1.4.5-lts.2",
+    "oracledb": "^6.8.0",
+    "os": "^0.1.2",
+    "perf_hooks": "^0.0.1",
+    "pg": "^8.16.3",
+    "smpp": "^0.6.0-rc.4",
+    "thread": "^0.0.2",
+    "threads": "^1.7.0",
+    "tls": "^0.0.1",
+    "worker": "^0.4.0",
+    "worker-thread": "^1.1.0",
+    "ws": "^8.18.2"
+  }
+}

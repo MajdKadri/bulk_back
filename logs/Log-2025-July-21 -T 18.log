@@ -1,0 +1,21 @@
+18:5:56	Batch size: 14, Sleep between batches: NaNms
+18:5:56	Sending batch 1 (messages 1-1)
+18:5:56	All messages have been sent. Cleaning up...
+18:5:56	All 14 workers are ready.
+18:5:56	Starting message distribution...
+18:5:57	Processing paused
+18:6:1	Processing completed successfully. Workers closed.
+18:6:1	Worker stopped (Instance 7, 10.10.52.23) with exit code 1
+18:6:1	Worker stopped (Instance 4, 10.10.52.21) with exit code 1
+18:6:1	Worker stopped (Instance 3, 10.10.52.20) with exit code 1
+18:6:1	Worker stopped (Instance 6, 10.10.52.23) with exit code 1
+18:6:1	Worker stopped (Instance 1, 10.10.52.18) with exit code 1
+18:6:1	Worker stopped (Instance 8, 10.10.52.18) with exit code 1
+18:6:1	Worker stopped (Instance 2, 10.10.52.19) with exit code 1
+18:6:1	Worker stopped (Instance 12, 10.10.52.22) with exit code 1
+18:6:1	Worker stopped (Instance 5, 10.10.52.22) with exit code 1
+18:6:1	Worker stopped (Instance 11, 10.10.52.21) with exit code 1
+18:6:1	Worker stopped (Instance 14, 10.10.52.23) with exit code 1
+18:6:1	Worker stopped (Instance 13, 10.10.52.23) with exit code 1
+18:6:1	Worker stopped (Instance 9, 10.10.52.19) with exit code 1
+18:6:1	Worker stopped (Instance 10, 10.10.52.20) with exit code 1
