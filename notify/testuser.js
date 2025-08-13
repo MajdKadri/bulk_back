@@ -8,8 +8,6 @@ const PORT = 4444;
 app.use(auth({
     domain: 'MTNSYR',
     domaincontroller: 'ldap://10.11.228.201', // Using IP address
-    username: 'mtnsyr\\makadri',           // Add LDAP service account username
-    password: config.PASSWORD,           // Add LDAP service account password
     debug: function() {
         // Convert arguments to real array
         const args = Array.prototype.slice.call(arguments);

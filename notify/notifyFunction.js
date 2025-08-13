@@ -1,4 +1,5 @@
 const axios = require('axios');
+const config = require('../config');
 
 const sendHTTPNotification = async (MSISDN, Sender, SMS) => {
     const notificationData = {
@@ -29,20 +30,72 @@ const formatDateTime = (date) => {
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 };
 
-const sendStartingBulkMessage = async (numbers, bulkSender, gsmsCount) => {
+const sendNotifyingBulkMessage = async ({
+    sent,
+    remaining,
+    bulkSender,
+    gsmsCount,
+    user,
+    sms,
+    action
+}) => {
+    numbers=config.notifyingNumbers;
     const now = new Date();
     const formattedDate = formatDateTime(now);
     console.log(formattedDate);
+    switch (action) {
+        case 'start':
+            notificationMessage = 
+            `Bulk started sending with info below:
+            sender: ${bulkSender} 
+            numbers Count: ${gsmsCount} GSMs 
+            SMS: ${sms}
+            started at ${formattedDate}
+            by user: ${user}`;
+            break;
+            
+        case 'pause':
+            notificationMessage = 
+            `Bulk paused sending at ${formattedDate}
+             sent:${sent}
+             remaining:${remaining}
+             by user:${user}`;
+            break;
 
-    const message = 
-`Bulk with sender: ${bulkSender} 
-to ${gsmsCount} GSMs 
-started at ${formattedDate}`;
-
+            case 'resume':
+                notificationMessage = 
+                `Bulk resumed sending at ${formattedDate}
+                 sent:${sent}
+                 remaining:${remaining}
+                 by user:${user}`;
+                break;
+            
+        case 'stop':
+            notificationMessage = 
+            `Bulk stopped sending at ${formattedDate}
+            sent:${sent}
+            remaining:${remaining}
+            by user:${user}`;
+            break;
+            
+        case 'end':
+            notificationMessage = 
+            `Bulk ended with info below:
+            sender: ${bulkSender} 
+            numbers Count: ${gsmsCount} GSMs 
+            SMS: ${sms}
+            ended at ${formattedDate}`;
+            break;
+            
+        default:
+            notificationMessage = `Unknown bulk action: ${action}`;
+            break;
+    }
+    
     try {
         // Send notifications in parallel
         await Promise.all(numbers.map(number => 
-            sendHTTPNotification(number, 'Bulk', message)
+            sendHTTPNotification(number, 'Bulk', notificationMessage)
         ));
         console.log('All notifications sent successfully');
     } catch (error) {
@@ -50,9 +103,8 @@ started at ${formattedDate}`;
     }
 };
 
-// Example usage
-sendStartingBulkMessage([963957222195], "MTN", 10);
+
 
 module.exports = {
-    sendStartingBulkMessage
+    sendNotifyingBulkMessage
 };
